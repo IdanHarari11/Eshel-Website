@@ -2,12 +2,14 @@
   margin-top: 5rem;
   padding: 16px;
   direction: rtl;
+  
 }
 
 .folderGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
+  
 }
 
 .folderItem {
@@ -24,6 +26,8 @@
   color: inherit;
   opacity: 0;
   animation: fadeIn 0.5s ease-in-out forwards;
+  border-radius: 15px
+
 }
 
 .folderItem:hover {
@@ -99,7 +103,7 @@
 }
 
 .backButton {
-  display: inline-block;
+  display: flex;
   margin-top: 20px;
   padding: 12px 24px;
   background-color: #0070f3;
@@ -113,6 +117,7 @@
   transition: background-color 0.3s, transform 0.3s;
   cursor: pointer;
   position: relative;
+  align-items: center;
 }
 
 .backButton:hover {

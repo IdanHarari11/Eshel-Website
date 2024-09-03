@@ -8,8 +8,8 @@ export default function Navbar() {
   };
 
   return (
-    <div className="sticky top-0 z-10">
-      <nav className="opacity-95 flex justify-center w-full right-0 left-0" style={{ backgroundColor: "rgba(21, 34, 43, 0.85)" }}>
+    <div className="sticky top-0 z-10 bg-current">
+      <nav className="opacity-95 flex justify-center w-full right-0 left-0" >
         <div className="mx-0 px-2 sm:px-6 lg:px-8 flex-1">
           <div className="flex h-24 items-center w-full">
             <div className="flex items-center">

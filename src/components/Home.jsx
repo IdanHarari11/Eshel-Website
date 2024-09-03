@@ -1,6 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 
+
+
+
 export default function Home() {
   return (
     <div className="bg-[url('/images/background-homepage.jpg')] bg-cover bg-center bg-fixed relative">
@@ -13,7 +16,7 @@ export default function Home() {
         </div>
         <div className='xs:mx-12 lg:mx-20 border-4 border-gray-100 rounded-xl bg-white '>
           <img
-            src='../../public/images/jonnySinsDoctor.jpg'
+            src='/images/jonnySinsDoctor.jpg'
             alt='Jonny Sins Doctor'
             className='float-start mx-4 my-4 rounded-lg'
           />
