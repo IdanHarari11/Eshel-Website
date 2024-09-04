@@ -26,7 +26,7 @@ export default function Footer() {
               href="#top"
               onClick={scrollToTop}
               className="text-orange-600">
-              www.ENTER_SITE_NAME.org
+              Synergy - D&D
           </a>
         </div>
       </div>

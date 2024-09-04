@@ -1,26 +1,38 @@
-import React from 'react';
-import Image from 'next/image';
-
-
+import React from "react";
+import Image from "next/image";
 
 
 export default function Home() {
   return (
-    <div className="bg-[url('/images/background-homepage.jpg')] bg-cover bg-center bg-fixed relative">
-      <div className='xs:text-xl xs:max-w-42 xs:place-items-center pt-40 mb-80 relative text-center text-yellow-500 max-w-52 lg:text-6xl lg:max-w-2xl font-bold font-serif'>
-        {`דב ארמוני 1935-2022`}
+    <div className="bg-[url('/images/background-homepage.jpg')] bg-cover bg-center bg-fixed relative min-h-screen">
+      <div className=" xs:text-xl xs:max-w-42 xs:place-items-center pt-52 mb-80 relative text-center text-white max-w-52 lg:text-4xl lg:max-w-2xl font-bold font-sans italic">
+        <pre>{`
+      ;ותום חשכה ללא קול באין שחר
+          .תפארת עזו נחלה של הכלל
+
+         מרצד לו קיום במרחב היקום
+           .מקטנות הקטן ועד למעבר
+
+               עדין חסר הקים בחלל
+                .ונמצא החסר שישנו
+
+     ,הדרוג הבריאה ופירוק לפרטים
+              .בפיצול היחיד לרבים
+            יש מן הכח הבילתי נגמר
+                 .מתחדש ונובע לעד
+          `}</pre>
       </div>
-      <div className='bg-gray-200'>
-        <div className='py-10 text-center text-black font-bold text-2xl'>
-          דוד בן גוריון
+      <div className="bg-gray-200">
+        <div className="py-10 text-center text-black font-bold text-2xl">
+          דב ארמוני
         </div>
-        <div className='xs:mx-12 lg:mx-20 border-4 border-gray-100 rounded-xl bg-white '>
+        <div className="xs:mx-12 lg:mx-20 border-4 border-gray-100 rounded-xl bg-white ">
           <img
-            src='/images/jonnySinsDoctor.jpg'
-            alt='Jonny Sins Doctor'
-            className='float-start mx-4 my-4 rounded-lg'
+            src="/images/jonnySinsDoctor.jpg"
+            alt="Jonny Sins Doctor"
+            className="float-start mx-4 my-4 rounded-lg"
           />
-          <p className='mt-2 mr-4 mb-4'>
+          <p className="mt-2 mr-4 mb-4">
             {`
             דָּוִד בֶּן־גּוּרְיוֹן (גְּרין; 16 באוקטובר 1886, י"ז בתשרי תרמ"ז
             – 1 בדצמבר 1973, ו' בכסלו תשל"ד) היה מדינאי ישראלי וראש הממשלה
@@ -44,7 +56,7 @@ export default function Home() {
             ופרישתו ממפא"י, הקים ב־1965 את רשימת פועלי ישראל (רפ"י). ב־1970
             פרש מהחיים הפוליטיים.`}
           </p>
-          <p className='ml-4 mr-4 mb-4'>
+          <p className="ml-4 mr-4 mb-4">
             {`
             בן-גוריון נולד בשם דוד יוסף גרין לשיינדל ולחבר "חובבי ציון"
             אביגדור גרין, בעיירה פלונסק שבפולין (אז בתחום האימפריה הרוסית).
@@ -56,7 +68,7 @@ export default function Home() {
             בבית הסמוך התגורר אברהם, אחיו הנשוי של דוד. בבית בן-גוריון דיברו
             יידיש, אך גם רוסית ופולנית.`}
           </p>
-          <p className='ml-4 mr-4 mb-4'>
+          <p className="ml-4 mr-4 mb-4">
             {`
             דוד בן־גוריון, שכונה בילדותו "דובצ'ה" וגם "דוידל", למד מגיל 5 אצל
             מלמד בחדר מסורתי, ובגיל 7 עבר למלמד "מודרני". מאוחר יותר עבר לחדר
@@ -75,7 +87,7 @@ export default function Home() {
             בתקופה זו הפסיק להניח תפילין. ב־1 בנובמבר 1901, כשהיה בן 15, שלח
             אביו בקשה לתיאודור הרצל, לסייע במתן השכלה לבנו.`}
           </p>
-          <p className='ml-4 mr-4 mb-4'>
+          <p className="ml-4 mr-4 mb-4">
             {`
             ב־1904 עבר לוורשה. תחילה התגורר אצל משפחת קרובים, ולאחר שהשיג
             עבודה חלקית כמורה פרטי ב"חדר מתוקן", שכר חדר במשותף עם ידיד.
