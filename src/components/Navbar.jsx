@@ -47,7 +47,6 @@ export default function Navbar() {
       className: router.pathname.startsWith('/folder') ? styles.activeItem : ''
     }
   ];
-  console.log("idan 🚀  ~ Navbar ~ router.pathname.startsWith('/folder'):", router.pathname.startsWith('/folder'));
 
   const start = (
     <img
