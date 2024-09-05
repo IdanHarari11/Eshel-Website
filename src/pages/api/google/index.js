@@ -42,7 +42,8 @@ async function listRootFolders(req, res) {
       q: "mimeType='application/vnd.google-apps.folder'",
       fields: 'files(id, name, mimeType)',
     });
-    res.status(200).json(response.data.files);
+    const folders = response.data.files.filter(folder => folder.name !== 'אבא אתר');
+    res.status(200).json(folders);
   } catch (error) {
     console.error('Error listing root folders:', error);
     res.status(500).json({ error: 'Failed to list root folders' });
