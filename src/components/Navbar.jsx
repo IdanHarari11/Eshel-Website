@@ -1,79 +1,74 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { Menubar } from 'primereact/menubar';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import Link from 'next/link';
+import styles from './Navbar.module.css'; // Import the CSS module
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [folders, setFolders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const router = useRouter();
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    const fetchFolders = async () => {
+      try {
+        const response = await fetch('/api/google');
+        const data = await response.json();
+        setFolders(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFolders();
+  }, []);
+
+  const items = [
+    {
+      label: 'דף הבית',
+      icon: 'pi pi-fw pi-home',
+      command: () => { router.push('/'); },
+      className: router.pathname === '/' ? styles.activeItem : ''
+    },
+    {
+      label: 'מדיה',
+      icon: 'pi pi-fw pi-folder',
+      items: folders.map(folder => ({
+        label: folder.name,
+        command: () => { router.push(`/folder/${folder.id}/${folder.name}`); },
+        className: router.pathname.startsWith('/folder') ? styles.activeItem : styles.inactiveItem
+      })),
+      className: router.pathname.startsWith('/folder') ? styles.activeItem : ''
+    }
+  ];
+  console.log("idan 🚀  ~ Navbar ~ router.pathname.startsWith('/folder'):", router.pathname.startsWith('/folder'));
+
+  const start = (
+    <img
+      alt="logo"
+      src="/images/logo.jpg"
+      height="40"
+      width="40"
+      className="rounded-full ml-5"
+      onClick={() => router.push('/')}
+      style={{ cursor: 'pointer' }}
+    />
+  );
 
   return (
-    <div className="sticky top-0 z-10 bg-current">
-      <nav className="opacity-95 flex justify-center w-full right-0 left-0" >
-        <div className="mx-0 px-2 sm:px-6 lg:px-8 flex-1">
-          <div className="flex h-24 items-center w-full">
-            <div className="flex items-center">
-              <img
-                src="/images/logo.jpg"
-                alt="Johnny Sins Logo"
-                className="h-16 w-auto rounded-full"
-              />
-            </div>
-            <div className="hidden sm:flex sm:items-center sm:justify-end sm:flex-1 right-0">
-              <div className="flex space-x-6 flex-row">
-                <a
-                  href="/folder/FoldersList"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white hover:text-gray-950 hover:font-bold"
-                  target="_self"
-                >
-                  מדיה
-                </a>
-                <a
-                  href="/"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white hover:text-gray-950 hover:font-bold"
-                  aria-current="page"
-                  target="_self"
-                >
-                  עמוד הבית
-                </a>
-              </div>
-            </div>
-            <div className="sm:hidden flex items-center ml-auto">
-              <button onClick={toggleMenu} className="text-white focus:outline-none">
-                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-      {isOpen && (
-        <div className="sm:hidden fixed inset-0 flex justify-end z-20">
-          <div className="bg-gray-800 opacity-95 w-64 h-full p-4 relative">
-            <button onClick={toggleMenu} className="absolute top-4 right-4 text-white focus:outline-none">
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-            <a
-              href="/folder/FoldersList"
-              className="block rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white hover:text-gray-950 hover:font-bold"
-              target="_self"
-            >
-              מדיה
-            </a>
-            <a
-              href="/"
-              className="block rounded-md px-3 py-2 text-sm font-medium text-white hover:bg-white hover:text-gray-950 hover:font-bold"
-              aria-current="page"
-              target="_self"
-            >
-              עמוד הבית
-            </a>
-          </div>
-        </div>
-      )}
+    <div className="sticky top-0 z-10 bg-white/80 flex justify-between items-center p-2" dir="rtl">
+      <div className="flex-shrink-0 order-2">
+        {start}
+      </div>
+      <div className="flex-grow order-1">
+        <Menubar model={items} className={styles.transparentMenubar} style={{backgroundColor: 'rgba(255, 255, 255, -0.2)'}} />
+      </div>
     </div>
   );
 }
