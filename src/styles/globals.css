@@ -9,3 +9,7 @@ html {
 .p-menuitem-text {
   margin-right: 5px;
 }
+
+.p-submenu-list {
+  border-radius: 4px;
+}
