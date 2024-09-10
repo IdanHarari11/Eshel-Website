@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.p-menuitem-text {
+  margin-right: 5px;
+}

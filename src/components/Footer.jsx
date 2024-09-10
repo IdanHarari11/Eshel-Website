@@ -11,21 +11,23 @@ export default function Footer() {
 
   return (
     <div className="scroll-smooth">
-      <footer className="bg-gray-800 text-white h-28 flex flex-col justify-center relative mt-auto">
+      <footer className="text-white h-28 flex flex-col justify-center relative mt-auto" style={{ backgroundColor: '#4E654A' }}>
       <div className="text-center mx-auto px-4 sm:px-6 lg:px-8 max-w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-7xl">
         <div className="text-sm">
-          © Copyright
-          <strong>
+          {/* <strong>
             <span className=""> www.RobertFrost.org</span>
-          </strong>
-          . All Rights Reserved
+            </strong> */}
+           כל הזכויות שמורות לדב ארמוני
+            <span className="ml-1">
+              ©  
+            </span>
         </div>
       </div>
       <a
         href="#"
         className="absolute xs:right-0 xs:px-1 bottom-9 lg:right-20 flex items-center justify-center"
       >
-        <FaArrowAltCircleUp className="text-orange-600 text-4xl" />
+        <FaArrowAltCircleUp className="text-600 text-4xl" />
       </a>
     </footer>
     </div>

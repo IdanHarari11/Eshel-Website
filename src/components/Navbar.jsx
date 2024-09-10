@@ -51,7 +51,7 @@ export default function Navbar() {
   const start = (
     <img
       alt="logo"
-      src="/images/logo.jpg"
+      src="/images/אקס ליברס.png"
       height="40"
       width="40"
       className="rounded-full ml-5"
@@ -66,7 +66,7 @@ export default function Navbar() {
         {start}
       </div>
       <div className="flex-grow order-1">
-        <Menubar model={items} className={styles.transparentMenubar} style={{backgroundColor: 'rgba(255, 255, 255, -0.2)'}} />
+        <Menubar model={items} className={styles.transparentMenubar} style={{backgroundColor: 'rgba(245, 246, 245, -0.2)'}} />
       </div>
     </div>
   );

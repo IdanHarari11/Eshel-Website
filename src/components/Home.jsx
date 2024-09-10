@@ -20,6 +20,8 @@ export default function Home() {
               .בפיצול היחיד לרבים
             יש מן הכח הבילתי נגמר
                  .מתחדש ונובע לעד
+          
+            מאת דב ארמוני, מתוך המשכן
           `}</pre>
       </div>
       <div className="bg-gray-200">

@@ -2,7 +2,9 @@
   font-family: 'Times New Roman', Times, serif; /* Change to your desired font */
   line-height: 1.5; /* Adjust line height for better readability */
   white-space: pre-wrap; /* Ensure text wraps properly */
+  text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5); /* Adjust shadow as needed */
 }
+
 
 @media (max-width: 768px) {
   .sentenceFont {
