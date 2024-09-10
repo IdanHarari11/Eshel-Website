@@ -12,6 +12,7 @@ export default function Navbar() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const router = useRouter();
+  const { name } = router.query;
 
   useEffect(() => {
     const fetchFolders = async () => {
@@ -42,7 +43,7 @@ export default function Navbar() {
       items: folders.map(folder => ({
         label: folder.name,
         command: () => { router.push(`/folder/${folder.id}/${folder.name}`); },
-        className: router.pathname.startsWith('/folder') ? styles.activeItem : styles.inactiveItem
+        className: name === folder.name ? styles.activeItem : styles.inactiveItem
       })),
       className: router.pathname.startsWith('/folder') ? styles.activeItem : ''
     }

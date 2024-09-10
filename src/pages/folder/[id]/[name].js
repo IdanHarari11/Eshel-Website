@@ -46,7 +46,7 @@ export default function FolderContents() {
                 <a className={styles.folderLink}>
                   <div className={styles.folderImage}>
                   </div>
-                  <div className={styles.folderTitle}>{item.name}</div>
+                  <div className={styles.folderTitle}>{item.name.substring(0, item.name.lastIndexOf('.')) || item.name}</div>
                 </a>
               </Link>
             ) : (
@@ -64,7 +64,7 @@ export default function FolderContents() {
                     onError={(e) => e.target.src = 'https://via.placeholder.com/150'}
                   />
                 </div>
-                <div className={styles.folderTitle}>{item.name}</div>
+                <div className={styles.folderTitle}>{item.name.substring(0, item.name.lastIndexOf('.')) || item.name}</div>
               </a>
             )}
           </div>
