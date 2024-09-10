@@ -5,7 +5,7 @@ import styles from "./Home.module.css";
 export default function Home() {
   return (
     <div className="bg-[url('/images/background-homepage.jpg')] bg-cover bg-center bg-fixed relative min-h-screen">
-      <div className=" xs:text-xl xs:max-w-42 xs:place-items-center pt-52 mb-80 relative text-center text-white max-w-52 lg:text-4xl lg:max-w-2xl font-bold font-sans italic">
+      <div className=" xs:text-xl xs:max-w-42 xs:place-items-center pt-28 mb-80 relative text-center text-white max-w-52 lg:text-4xl lg:max-w-2xl font-bold font-sans italic">
       <pre className={styles.sentenceFont}>{`
       ;ותום חשכה ללא קול באין שחר
           .תפארת עזו נחלה של הכלל
