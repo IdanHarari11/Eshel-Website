@@ -20,15 +20,6 @@ export default function Footer() {
           </strong>
           . All Rights Reserved
         </div>
-        <div className="text-xs">
-          <span>Designed by </span>
-          <a 
-              href="#top"
-              onClick={scrollToTop}
-              className="text-orange-600">
-              Synergy - D&D
-          </a>
-        </div>
       </div>
       <a
         href="#"
