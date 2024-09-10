@@ -62,7 +62,7 @@ export default function Navbar() {
   );
 
   return (
-    <div className="sticky top-0 z-10 bg-white/80 flex justify-between items-center p-2" dir="rtl">
+    <div className="sticky top-0 z-10 bg-current flex justify-between items-center p-2" dir="rtl">
       <div className="flex-shrink-0 order-2">
         {start}
       </div>
