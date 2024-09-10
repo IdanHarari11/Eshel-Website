@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import styles from "../FolderContents.module.css"; // Import the CSS module
-import Image from "next/image";
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import styles from '../FolderContents.module.css'; // Import the CSS module
+import Image from 'next/image';
 
 export default function FolderContents() {
   const router = useRouter();
@@ -20,7 +20,7 @@ export default function FolderContents() {
       setLoading(true);
       const response = await fetch(`/api/google?folderId=${id}`);
       if (!response.ok) {
-        throw new Error("Failed to fetch folder contents");
+        throw new Error('Failed to fetch folder contents');
       }
       const data = await response.json();
       setContents(data.files);
@@ -31,45 +31,29 @@ export default function FolderContents() {
     }
   };
 
-  if (loading)
-    return (
-      <div className={styles.loaderContainer}>
-        <div className={styles.loader}></div>
-      </div>
-    );
+  if (loading) return <div className={styles.loaderContainer}><div className={styles.loader}></div></div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div
-      className={`${styles.container} flex flex-col items-center bg-gradient-to-l from-gray-400 to-gray-200 h-screen`}
-    >
-      <button
-        className={`${styles.backButton}  w-60 place-content-center mb-10 `}
-        onClick={() => router.back()}
-      >
-        חזור
-      </button>
-      <h2 className="mb-10 font-bold text-3xl">{name}</h2>
+    <div className={styles.container}>
+      <button className={styles.backButton} onClick={() => router.back()}>חזור</button>
+      <h2 className={styles.headerTitle}>{name}</h2>
       <div className={styles.folderGrid}>
         {contents?.map((item, index) => (
-          <div
-            key={item.id}
-            className={styles.folderItem}
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            {item.mimeType === "application/vnd.google-apps.folder" ? (
+          <div key={item.id} className={styles.folderItem} style={{ animationDelay: `${index * 0.1}s` }}>
+            {item.mimeType === 'application/vnd.google-apps.folder' ? (
               <Link href={`/folder/${item.id}`}>
                 <a className={styles.folderLink}>
-                  <div className={styles.folderImage}></div>
+                  <div className={styles.folderImage}>
+                  </div>
                   <div className={styles.folderTitle}>{item.name}</div>
                 </a>
               </Link>
             ) : (
               <a
                 href={item.webViewLink}
-                target="_blank"
-                className={`${styles.folderLink} cursor-pointer text-blue-500 hover:underline`}
-              >
+                target='_blank'
+                className={`${styles.folderLink} cursor-pointer text-blue-500 hover:underline`}>
                 <div className={styles.folderImage}>
                   <Image
                     src={item.thumbnailLink}
@@ -77,9 +61,7 @@ export default function FolderContents() {
                     className={styles.image}
                     width={220}
                     height={220}
-                    onError={(e) =>
-                      (e.target.src = "https://via.placeholder.com/150")
-                    }
+                    onError={(e) => e.target.src = 'https://via.placeholder.com/150'}
                   />
                 </div>
                 <div className={styles.folderTitle}>{item.name}</div>
