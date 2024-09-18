@@ -30,9 +30,10 @@ export default function Home() {
         </div>
         <div className="xs:mx-12 lg:mx-20 border-4 border-gray-100 rounded-xl bg-white">
           <img
-            src="/images/jonnySinsDoctor.jpg"
+            src="/images/dov-homepage.jpeg"
             alt="Jonny Sins Doctor"
             className="float-start mx-4 my-4 rounded-lg"
+            style={{ width: "21.5rem", height: "30rem"}}
           />
           <p dir="rtl" className="mt-2 mr-4 mb-4">
             {`

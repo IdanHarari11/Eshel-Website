@@ -52,9 +52,9 @@ export default function Navbar() {
   const start = (
     <img
       alt="logo"
-      src="/images/אקס ליברס.png"
-      height="40"
-      width="40"
+      src="/images/dov-face.jpg"
+      height="55"
+      width="55"
       className="rounded-full ml-5"
       onClick={() => router.push('/')}
       style={{ cursor: 'pointer' }}
