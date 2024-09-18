@@ -1,12 +1,7 @@
 
 import { google } from 'googleapis';
-import path from 'path';
 import { Readable } from 'stream';
 
-const SERVICE_ACCOUNT_KEY_FILE = path.join(
-  process.cwd(),
-  'config/service-account-key.json'
-);
 const SCOPES = ['https://www.googleapis.com/auth/drive.readonly'];
 
 const auth = new google.auth.GoogleAuth({

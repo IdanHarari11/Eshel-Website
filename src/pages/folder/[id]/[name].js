@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../FolderContents.module.css'; // Import the CSS module
 import Image from 'next/image';
-import useAuth from '@/hooks/useAuth';
-import PasswordModal from '@/components/PasswordModal';
 
 export default function FolderContents() {
   const router = useRouter();
@@ -12,13 +10,8 @@ export default function FolderContents() {
   const [contents, setContents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { isAuthenticated, handlePasswordSubmit } = useAuth();
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      return <PasswordModal onPasswordSubmit={handlePasswordSubmit} />;
-    }
-
     if (id) fetchFolderContents();
   }, [id]);
 
