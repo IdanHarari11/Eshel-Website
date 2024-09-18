@@ -31,7 +31,7 @@ const PasswordModal = ({ onPasswordSubmit }) => {
             className='border-2 border-solid'
           />
         </div>
-        <Button label="Submit" className='border-2 border-solid rounded-md w-25' onClick={handleSubmit} />
+        <Button label="אישור" className='border-2 border-solid rounded-md w-25' onClick={handleSubmit} />
       </div>
     </Dialog>
   );
