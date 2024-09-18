@@ -43,7 +43,7 @@ export default function Navbar() {
       items: folders.length > 0 ? folders?.map(folder => ({
         label: folder.name,
         command: () => { router.push(`/folder/${folder.id}/${folder.name}`); },
-        className: name === folder.name ? styles.activeItem : styles.inactiveItem
+        className: name === folder.name.trim() ? styles.activeItem : styles.inactiveItem
       })): [],
       className: router.pathname.startsWith('/folder') ? styles.activeItem : ''
     }
