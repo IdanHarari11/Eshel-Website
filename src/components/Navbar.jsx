@@ -40,11 +40,11 @@ export default function Navbar() {
     {
       label: 'מדיה',
       icon: 'pi pi-fw pi-folder',
-      items: folders.map(folder => ({
+      items: folders.length > 0 ? folders?.map(folder => ({
         label: folder.name,
         command: () => { router.push(`/folder/${folder.id}/${folder.name}`); },
         className: name === folder.name ? styles.activeItem : styles.inactiveItem
-      })),
+      })): [],
       className: router.pathname.startsWith('/folder') ? styles.activeItem : ''
     }
   ];

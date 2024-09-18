@@ -44,7 +44,7 @@ const FolderList = () => {
   return (
     <div className="flex flex-col min-h-screen">
     <div className="bg-gradient-to-b from-gray-600 to-gray-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px p-2">
-      {folders.length > 0 ? folders.map((folder) => (
+      {folders.length > 0 ? folders?.map((folder) => (
         <Link
           key={folder.id}
           href={{
