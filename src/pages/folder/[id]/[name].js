@@ -23,7 +23,8 @@ export default function FolderContents() {
         throw new Error('Failed to fetch folder contents');
       }
       const data = await response.json();
-      setContents(data.files);
+      const sortedData = data.files.sort((a, b) => a.name.localeCompare(b.name));
+      setContents(sortedData);
     } catch (err) {
       setError(err.message);
     } finally {

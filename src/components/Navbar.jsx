@@ -19,7 +19,8 @@ export default function Navbar() {
       try {
         const response = await fetch('/api/google');
         const data = await response.json();
-        setFolders(data);
+        const sortedFolders = data.sort((a, b) => a.name.localeCompare(b.name));
+        setFolders(sortedFolders);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -38,7 +39,7 @@ export default function Navbar() {
       className: router.pathname === '/' ? styles.activeItem : ''
     },
     {
-      label: 'מדיה',
+      label: 'תיקיות',
       icon: 'pi pi-fw pi-folder',
       items: folders.length > 0 ? folders?.map(folder => ({
         label: folder.name,
@@ -52,10 +53,10 @@ export default function Navbar() {
   const start = (
     <img
       alt="logo"
-      src="/images/dov-face.jpg"
+      src="/images/אקס ליברס.png"
       height="55"
       width="55"
-      className="rounded-full ml-5"
+      className="rounded-full ml-5 bg-transparent	"
       onClick={() => router.push('/')}
       style={{ cursor: 'pointer' }}
     />
@@ -63,7 +64,7 @@ export default function Navbar() {
 
   return (
     <div className="sticky top-0 z-10 bg-current flex justify-between items-center p-2" style={{backgroundColor: 'rgba(245, 246, 245, 66%)'}} dir="rtl">
-      <div className="flex-shrink-0 order-2">
+      <div className="flex-shrink-0 order-2 bg-transparent">
         {start}
       </div>
       <div className="flex-grow order-1">

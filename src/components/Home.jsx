@@ -21,8 +21,8 @@ export default function Home() {
             יש מן הכח הבילתי נגמר
                  .מתחדש ונובע לעד
           
-            מאת דב ארמוני, מתוך המשכן
           `}</pre>
+          <p className="text-3xl">מתוך המשכן, מאת דב ארמוני</p>
       </div>
       <div className="bg-gray-200 pb-5">
         <div className="py-10 text-center text-black font-bold text-2xl">

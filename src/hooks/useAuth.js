@@ -11,7 +11,7 @@ const useAuth = () => {
   }, []);
 
   const handlePasswordSubmit = (password) => {
-    if (password === '1234') {
+    if (password === '1525') {
       localStorage.setItem('isAuthenticated', 'true');
       setIsAuthenticated(true);
     } else {
@@ -20,6 +20,6 @@ const useAuth = () => {
   };
 
   return { isAuthenticated, handlePasswordSubmit };
-};
+}
 
 export default useAuth;
