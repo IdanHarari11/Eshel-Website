@@ -4,7 +4,7 @@ const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    const auth = localStorage.getItem('isAuthenticated');
+    const auth = sessionStorage.getItem('isAuthenticated');
     if (auth === 'true') {
       setIsAuthenticated(true);
     }
@@ -12,7 +12,7 @@ const useAuth = () => {
 
   const handlePasswordSubmit = (password) => {
     if (password === '1525') {
-      localStorage.setItem('isAuthenticated', 'true');
+      sessionStorage.setItem('isAuthenticated', 'true');
       setIsAuthenticated(true);
     } else {
       alert('Incorrect password');
