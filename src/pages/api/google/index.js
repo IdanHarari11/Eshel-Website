@@ -20,7 +20,6 @@ const auth = new google.auth.GoogleAuth({
   },
   scopes: SCOPES,
 });
-console.log("idan 🚀  ~ auth:", auth);
 
 const drive = google.drive({ version: 'v3', auth });
 
